@@ -2,7 +2,9 @@
    <Loading v-if="$fetchState.pending" class="absolute z-20 inset-0" />
    <div v-else class="single-movie">
       <div class="container absolute top-4 inset-x-0 z-10">
-         <nuxt-link :to="{ name: 'index' }" class="btn-prev"><</nuxt-link>
+         <nuxt-link :to="{ name: 'index' }" class="btn-prev"
+            ><font-awesome-icon :icon="['fas', 'fa-chevron-left']"
+         /></nuxt-link>
       </div>
 
       <div class="w-full h-[40vh] lg:h-[60vh] overflow-hidden relative">
@@ -36,8 +38,10 @@
                >
                   {{ movie.vote_average }}
                </p>
-               <p class="text-gray-400 text-xs">{{ movie.tagline }}</p>
-               <p class="text-gray-400 mt-1 text-xs">
+               <p class="text-gray-400 text-sm mt-2">
+                  {{ movie.runtime }} minutes
+               </p>
+               <p class="text-gray-400 mt-1 text-sm">
                   {{
                      new Date(movie.release_date).toLocaleString("en-us", {
                         month: "long",
@@ -46,6 +50,7 @@
                      })
                   }}
                </p>
+
                <p class="text-white text-base hidden md:block">
                   {{ movie.overview }}
                </p>
@@ -66,8 +71,12 @@ import axios from "axios";
 
 export default {
    name: "single-movie",
+   head() {
+      return {
+         title: this.movie.title + " | RI Movie",
+      };
+   },
 
-   transitions: "home",
    data() {
       return {
          movie: null,

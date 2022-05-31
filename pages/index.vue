@@ -7,14 +7,15 @@
 
       <!-- Movies -->
       <div v-else class="container">
-
-         <h2 class="text-2xl md:text-3xl text-white capitallize mt-6 mb-4 font-semibold">Now Playing</h2>
+         <h2
+            class="text-2xl md:text-3xl text-white capitallize mt-6 mb-4 font-semibold"
+         >
+            Now Playing
+         </h2>
          <div
             class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8"
             id="movie-container"
          >
-        
-       
             <nuxt-link
                class="movie group"
                :to="{ name: 'movies-movieid', params: { movieid: movie.id } }"
@@ -40,7 +41,6 @@
                      {{ movie.title }}
                   </h1>
                   <p class="text-gray-400 text-sm">
-                     
                      {{
                         new Date(movie.release_date).toLocaleString("en-us", {
                            month: "long",
@@ -66,6 +66,24 @@ export default {
 
    name: "IndexPage",
    components: { Hero, Loading },
+
+   head() {
+      return {
+         title: "Ri Movie - Streaming",
+         meta: [
+            {
+               hid: "description",
+               name: "description",
+               content: "Streaming Movies Online ",
+            },
+            {
+               hid: "keyword",
+               name: "keyword",
+               content: "Ri Movie",
+            },
+         ],
+      };
+   },
 
    data() {
       return {
