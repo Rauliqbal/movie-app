@@ -2,7 +2,7 @@
   <div class="hero overflow-hidden">
     <div>
       <img
-        class="w-full h-full object-cover"
+        class="w-full h-[400px] object-cover"
         src="../assets/images/movie-hero.webp"
         alt=""
       />
