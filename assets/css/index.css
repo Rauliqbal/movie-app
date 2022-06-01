@@ -55,13 +55,13 @@
    }
 
    .btn-prev {
-      @apply px-2 py-[2px] bg-gray-900/80 rounded-full text-white font-bold text-lg;
+      @apply px-[10px] py-1 bg-gray-600/80 rounded-full text-white font-bold text-base;
    }
 }
 
 @layer utilities {
    .movie-title {
-      @apply text-white text-lg font-semibold tracking-wide overflow-hidden;
+      @apply text-white text-lg font-semibold tracking-wide overflow-hidden ;
 
       display: -webkit-box;
       -webkit-line-clamp: 1;

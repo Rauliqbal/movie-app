@@ -2,9 +2,7 @@
    <div>
       <!-- Hero -->
       <Hero />
-
       <Loading v-if="$fetchState.pending" class="pt-[120px] items-start" />
-
       <!-- Movies -->
       <div v-else class="container">
          <h2
@@ -36,7 +34,7 @@
                   </p>
                </div>
 
-               <div class="py-2 px-3">
+               <div class="p2">
                   <h1 class="movie-title">
                      {{ movie.title }}
                   </h1>
@@ -60,6 +58,7 @@
 import axios from "axios";
 import Hero from "~/components/Hero.vue";
 import Loading from "~/components/Loading.vue";
+
 
 export default {
    transitions: "home",
@@ -88,6 +87,7 @@ export default {
    data() {
       return {
          movies: [],
+         
       };
    },
    async fetch() {
@@ -107,6 +107,8 @@ export default {
          });
          console.log(this.movies);
       },
+
+      
    },
 };
 </script>
