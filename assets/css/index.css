@@ -55,7 +55,7 @@
    }
 
    .btn-prev {
-      @apply px-[10px] py-[5px] bg-gray-600/80 rounded-full text-white font-bold text-base;
+      @apply px-[10px] py-[6px] bg-gray-600/80 rounded-full text-white font-bold text-base;
    }
 }
 
