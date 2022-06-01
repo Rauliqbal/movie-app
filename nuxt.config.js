@@ -30,6 +30,7 @@ export default {
       // https://go.nuxtjs.dev/tailwindcss
       "@nuxtjs/tailwindcss",
       "@nuxtjs/fontawesome",
+      
    ],
 
    fontawesome: {
@@ -42,6 +43,7 @@ export default {
    modules: [
       // https://go.nuxtjs.dev/axios
       "@nuxtjs/axios",
+      "@nuxtjs/pwa",
    ],
 
    // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -49,6 +51,25 @@ export default {
       // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
       baseURL: "/",
    },
+
+   // PWA module
+      pwa: {
+         meta : {
+            title: 'Ri Movies',
+            author: 'Rauliqbal'
+         },
+         manifest : {
+            name : 'Ri Movies',
+            short_name: 'Ri Movies',
+            description: 'RI Movies Streaming Movies Online',
+         },
+         icon : {
+            fileName : 'android-chrome-512x512.png',
+            sizes :[64, 120, 144, 152, 192, 384, 512]
+         }
+        
+      },
+
 
    // Build Configuration: https://go.nuxtjs.dev/config-build
    build: {
@@ -59,4 +80,6 @@ export default {
          },
       },
    },
+
+   
 };
